@@ -1,32 +1,197 @@
 *{
 	box-sizing: border-box;
+	transition: 1s;
+	font-family: 'Montserrat', sans-serif;
 }
 
-.html{
+html{
 	width: 100%;
 	height: 100%;
+	overflow: hidden;
+	box-shadow: inset 0 0 100px black;
 }
 
 .body{
 	display: flex;
+	flex-direction: column;
 	width: 100%;
 	height: 100%;
+	margin: 0;
 	justify-content: center;
 	align-items: center;
+	backdrop-filter: blur(10px);
 }
 
 .container{
 	display: flex;
-	flex-wrap: wrap;
+	flex-direction: column;
 	width: 350px;
 	height: 400px;
 	box-shadow: 0 0 10px #000000;
 	border-radius: 10px;
+	margin-top: 100px;
+}
+
+.audio-image-container{
+	width: 100%;
+	height: 280px;
+	border-radius: 10px 10px 0px 0;
+	overflow: hidden;
 }
 
 .audio-image{
 	width: 100%;
-	height: 280px;
-	background: black;
 	border-radius: 10px 10px 0px 0;
+}
+
+.audio-control{
+	width: 100%;
+	height: 120px;
+	border-radius: 0px 0px 10px 10px;
+	background: linear-gradient(to left, #7f7f7f, #3d3d3d);
+	display: flex;
+	flex-direction: column;
+}
+
+.control{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
+.song-name{
+	width: 170px;
+}
+
+.author{
+	color: rgb(193, 255, 6);
+	font-family: 'Montserrat', sans-serif;
+   font-weight: bold;
+   font-size: 20px;
+}
+
+.song{
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+   font-size: 17px;
+	margin-top: -15px;
+}
+
+.back-forw{
+	display: flex;
+	flex-direction: column;
+}
+
+.button-play{
+	border: none;
+	background: none;
+	display: block;
+}
+
+
+.button-forward{
+	border: none;
+	background: none;
+	display: block;
+}
+
+
+.button-backward{
+	border: none;
+	background: none;
+	display: block;
+}
+
+.button-play img{
+	filter: invert();
+	transition: 0.3s;
+	cursor: pointer;
+}
+
+
+.button-forward img{
+	filter: invert();
+	transition: 0.3s;
+	cursor: pointer;
+}
+
+
+.button-backward img{
+	filter: invert();
+	transition: 0.3s;
+	cursor: pointer;
+}
+
+.button-play img:hover{
+	filter: invert(83%) sepia(26%) saturate(426%) hue-rotate(313deg) brightness(83%) contrast(93%);
+}
+
+
+.button-forward img:hover{
+	filter: invert(83%) sepia(26%) saturate(426%) hue-rotate(313deg) brightness(83%) contrast(93%);
+}
+
+
+.button-backward img:hover{
+	filter: invert(83%) sepia(26%) saturate(426%) hue-rotate(313deg) brightness(83%) contrast(93%);
+}
+
+.progress-bar{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 350px;
+	margin: 0 auto;
+}
+
+.timeline{
+	height: 5px;
+	width: 220px;
+	background-color: #000000;
+	margin: 0px 0px 10px 0px;
+	border-radius: 30px;
+	transition: 0s;
+	cursor: pointer;
+}
+
+.slider{
+	position: relative;
+	height: 11px;
+	width: 7px;
+	background-color:gold;
+	bottom: 3px;
+	border-radius: 25px;
+	transition: 0s;
+	cursor: pointer;
+}
+
+.time-current{
+	color: white;
+	align-self: flex-start;
+	font-size: 13px;
+	margin: -5px 0px 30px 60px;
+}
+
+.song-duration{
+	color: rgb(193, 255, 6);
+	font-size: 13px;
+	margin: -15px -27px 5px 170px;
+}
+
+.footer{
+	color:darkseagreen;
+	text-decoration: none;
+	margin-top: 100px;
+}
+
+
+.footer a{
+	color:darkseagreen;
+	text-decoration: none;
+}
+ 
+.footer a img{
+	filter: invert();
 }
