@@ -54,8 +54,11 @@ const changeSong = (playNum) => {
 	htmlBackground.style.background = "url('assets/img/" + musicPics[playNum] + "')"
 	htmlBackground.style.backgroundRepeat = "no-repeat"
 	htmlBackground.style.backgroundSize = "100% 100%"
+	duration = currentAudio.duration
+
 	currentAudio.onloadedmetadata = function () {
-		songDuration.textContent = getTimeCodeFromNum(parseInt(currentAudio.duration))
+		let duration = currentAudio.duration
+		songDuration.textContent = getTimeCodeFromNum(parseInt(duration))
 	};
 }
 
@@ -69,6 +72,11 @@ const delay = () => {
 		document.querySelector(".time-current").textContent = getTimeCodeFromNum(
 			currentAudio.currentTime
 		);
+		const sliderLeft = window.getComputedStyle(slider).left
+		if (sliderLeft == "220px") {
+			toNext()
+			slider.style.left = "0px"
+		}
 	}, 10)
 }
 
@@ -80,9 +88,6 @@ const playFunc = () => {
 		flag = true
 		document.getElementById("audio-image").style.transform = "scale(1.2)"
 		let duration = 0
-		currentAudio.onloadedmetadata = function () {
-			duration = currentAudio.duration
-		};
 		for (let i = 0; i <= duration; i++) {
 			delay()
 		}
@@ -119,13 +124,13 @@ timeline.addEventListener('mousemove', moveMe, false);
 
 function mouseDown(event) {
 	skipping = true;
-	currentAudio.pause()
+	playFunc()
 	moveMe(event)
 	mousedown = true
 }
 function mouseUp(event) {
 	skipping = false;
-	if (mousedown == true) { currentAudio.play() }
+	if (mousedown == true) { flag = false; playFunc() }
 	mousedown = false
 }
 
