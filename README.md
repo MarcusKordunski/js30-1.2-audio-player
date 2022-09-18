@@ -1,5 +1,5 @@
 # js30-1.2-audio-player
-Javascript custom audio player
+### Javascript custom audio player
 
 ![image](https://user-images.githubusercontent.com/95471509/190904693-763aca19-b5f9-4450-b526-df98e7b64797.png)
 
